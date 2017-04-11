@@ -55,7 +55,16 @@
 ;(cartesian-product (list 10 50) (list '+ '- '/ '*))
 
 ; This was an alternative piece of code compared to the above code 
-(cartesian-product(permutations (list 10 50 '+ '- '/ '*)))
+;(cartesian-product(permutations (list 10 50 '+ '- '/ '*)))
+
+;(remove-duplicates (cartesian-product(permutations (list 10 50 '+ '- '/ '*))))
+
+;(map (list 10 50) (list '+ '- '/ '*))
+
+(map (lambda (number)
+       (+ target number))
+     '(1 2 3 4))
+
 
 
 
