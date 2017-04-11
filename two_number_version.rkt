@@ -24,19 +24,19 @@
 (define b 2)
 
 ;   Simple function to add two numbers together
-(define (sum x y) (+ x y))
+;(define (sum x y) (+ x y))
 
 #|
     List of all the calculations that can be done with the 2 number version of the game 
 
-    (a + b)
-    (b + a)
-    (a - b)
-    (b - a)
-    (a * b)
-    (b * a)
-    (a / b)
-    (b / a)
+    (a + b) -> (+ a b)
+    (b + a) -> (+ b a)
+    (a - b) -> (- a b)
+    (b - a) -> (- b a)
+    (a * b) -> (* a b)
+    (b * a) -> (* b a)
+    (a / b) -> (/ a b)
+    (b / a) -> (/ b a)
 |#
 
 #|
@@ -52,7 +52,7 @@
 ;(permutations (list '+ '- '/ '*))
 
 ; This code was used to see and test the workings of the cartesian-product function
-;(cartesian-product (list 10 50) (list '+ '- '/ '*))
+;(cartesian-product  (list '+ '- '/ '*) (list 10 50) )
 
 ; This was an alternative piece of code compared to the above code 
 ;(cartesian-product(permutations (list 10 50 '+ '- '/ '*)))
@@ -61,9 +61,32 @@
 
 ;(map (list 10 50) (list '+ '- '/ '*))
 
-(map (lambda (number)
+#;(map (lambda (number)
        (+ target number))
-     '(1 2 3 4))
+      (list 1 2 3 4))
+
+#;(map (lambda (number)
+       (+ target number))
+      (cartesian-product  (list '+ '- '/ '*) (list 10 50)))
+
+;(cartesian-product (cartesian-product  (list '+ '- '/ '*) (list 10 50)) (list 10 50))
+
+; apply will perform the operation given to all the elements in the list
+;(apply + (cartesian-product  (list '+ '- '/ '*) (list 10 50)))
+
+;
+;(combinations (list 10 50) 2)
+
+; Proves the result of the cartesian-product is a list
+;(pair? (cartesian-product  (list '+ '- '/ '*) (list 10 50)))
+
+;(eval (cartesian-product  (list '+ '- '/ '*) (list 10 50)))
+
+
+
+
+
+
 
 
 
