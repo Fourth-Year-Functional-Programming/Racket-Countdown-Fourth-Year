@@ -30,4 +30,11 @@
 ; This is calculted as follows
 ; 6! / 4!(6 – 4)!
 ; 720 / 48 = 15
-(combinations c-list 4)
+;(combinations c-list 4)
+
+; Find all the combinations with 5 numbers
+; There will be 20 combinations
+; This is calculted as follows
+; 6! / 5!(6 – 5)!
+; 720 / 120 = 6
+(combinations c-list 5)
