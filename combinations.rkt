@@ -14,6 +14,13 @@
 ; Find all the combinations with 2 numbers
 ; There will be 15 combinations
 ; This is calculted as follows
+; 6! / 1!(6 – 1)!
+; 720 / 120 = 6
+(combinations c-list 1)
+
+; Find all the combinations with 2 numbers
+; There will be 15 combinations
+; This is calculted as follows
 ; 6! / 2!(6 – 2)!
 ; 720 / 48 = 15
 ;(combinations c-list 2)
@@ -37,4 +44,11 @@
 ; This is calculted as follows
 ; 6! / 5!(6 – 5)!
 ; 720 / 120 = 6
-(combinations c-list 5)
+;(combinations c-list 5)
+
+; Find all the combinations with 5 numbers
+; There will be 20 combinations
+; This is calculted as follows
+; 6! / 5!(6 – 5)!
+; 720 / 720 = 1
+(combinations c-list 6)
