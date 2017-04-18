@@ -20,3 +20,18 @@
 ; Store the duplicate free list in variable
 (define dup-free (remove-duplicates (permutations start-perm)))
 
+; 
+; Create procedure called make-rpn
+; Add on the 2 1's at the start and -1 to the end
+(define (make-rpn l)
+  (append (list 1 1) l (list -1)))
+
+; Put the 1's and -1 onto the output of dup-free at each iteration
+;(length (map make-rpn dup-free))
+
+; Show all the permutations which start and end correctly
+(map make-rpn dup-free)
+
+
+
+
