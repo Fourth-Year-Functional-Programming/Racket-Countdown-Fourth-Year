@@ -10,3 +10,13 @@
 ;-1 represents operators
 ;1 represents numbers
 (define start-perm (list -1 -1 -1 -1 1 1 1 1))
+
+; 40320 permutations with the 8 element list
+(length (permutations start-perm))
+
+; 70 permutations When duplicates are removed 
+;(length (remove-duplicates (permutations start-perm)))
+
+; Store the duplicate free list in variable
+(define dup-free (remove-duplicates (permutations start-perm)))
+
