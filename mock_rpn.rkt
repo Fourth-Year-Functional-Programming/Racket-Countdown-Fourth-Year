@@ -6,6 +6,11 @@
     with using -1 for operators and 1 for numbers.
 |#
 
+#|
+    Useful functions for testing
+    (displayln X)
+|#
+
 ;define a list of ops and numbers
 ;-1 represents operators
 ;1 represents numbers
@@ -31,6 +36,7 @@
 
 ; Show all the permutations which start and end correctly
 (map make-rpn dup-free)
+
 
 
 
