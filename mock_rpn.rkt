@@ -39,26 +39,26 @@
 
 ;(null? dup-free)
 
-
 ; define procedure valid-rpn?
 ; valid-rpn takes 2 arguments
 ; second argument is stack or set to 0 as default value
 ; optional arguement to the func with default value of 0
-#|(define (valid-rpn? e [s 0])) ; e is duplicate free list, s is the stack 
+#|(define (valid-rpn? e [s 0]) ; e is duplicate free list, s is the stack 
    (if(null? e)    ; check if list is null
 
      ; This won't work in final version
      ; It's only true is values are the exact same
      ; Here it's mock testing if both elements are numbers
-     ; In final version the test is to check if bot elements are numbers E.G 12 and 34
+     ; In final version the test is to check if both elements are numbers E.G 12 and 34
      ; The other scenario is that one or both elements are operators
      (if (= s 1) #t #f) ; What element of s is being compared??????
 
-      ;if the first thing on e is 1
+      ; if the first thing on e is 1 (A number)
+      ; needs an else to be valid if statement  
      (if(= (car e) 1) ; if top element of dup free list is equal to 1 (A Number)
 
         
-         (valid-rpn? (cdr e)(+ 1 s)) ; cdr extracts second element in list
+         (valid-rpn? (cdr e)(+ 1 s)) #f ; cdr returns the list with the previuos top element 
 
          ;fill this part in
          )))
@@ -88,7 +88,38 @@
 
 ; If statement to test how the equals evalutes numbers
 ; Result: = operator tests if number are the exact same value
-(if (= num1 num2) #t #f)
+; (if (= num1 num2) #t #f)
+
+; =====  See how the valid-rpn function is working step by step  =====
+
+#|
+; list e
+(define e (list 1 2 3 '+ '+))
+
+ ; list stack has one element which is 0
+(define stack (list 1))
+
+; valid-rpn is id
+; Pass in two arguments e and s
+(define (valid-rpn? e [stack 0])
+
+  ; body is here
+
+   ; check is list is empty
+   ; If it isn't empty go into next if statement
+  (if(null? e) #t (if (= (car stack) 1) #t #f) )
+
+  (if (= (car e) 1 (valid-rpn? (cdr e)(+ 1 s)) ) ; If car of list is a number return number??
+                                                 ; Else pass in the list again
+  
+  
+  ); End body of function
+
+; call valid-rpn? here
+(valid-rpn? e stack)
+
+  ;(if(null? e) #t #f)  
+|#
 
 
 
