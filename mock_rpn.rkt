@@ -35,19 +35,19 @@
 ;(length (map make-rpn dup-free))
 
 ; Show all the permutations which start and end correctly
-;(map make-rpn dup-free)
+(map make-rpn dup-free)
 
-(null? dup-free)
+;(null? dup-free)
 
 
 ; define procedure valid-rpn?
 ; valid-rpn takes 2 arguments
 ; second argument is stack or set to 0 as default value
 ; optional arguement to the func with default value of 0
-#|(define (valid-rpn? e [s 0]))
+#|(define (valid-rpn? e [s 0])) ; e is duplicate free list 
    (if(null? e)    ; check if list is null
-     (if (= s 1) #t #f)
-     (if(= (car e) 1)
+     (if (= s 1) #t #f) ; 
+     (if(= (car e) 1) ; if top element of dup free list is equal to 1 (A Number)
          ;if the first thing on e is 1
          (valid-rpn? (cdr e)(+ 1 s))
          ;fill this part in
@@ -62,11 +62,11 @@
 ; Function for testing if statements
 ; If list is not null display list
 ; else print error message
-(define (valid-rpn? e [s 0])
-  (if (null? e) (error "doesn't get here")  (displayln dup-free)))
+;(define (valid-rpn? e [s 0])
+  ;(if (null? e) (error "doesn't get here")  (displayln dup-free)))
 
 ; If dup-free list 
-(valid-rpn? dup-free)
+;(valid-rpn? dup-free)
 
 
 
