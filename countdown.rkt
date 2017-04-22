@@ -5,7 +5,26 @@
 |#
 
 ; A hard coded list to represent a round from the countdown number game
-(define n-list (list 1 2 3 4 25 50))
+(define n-list (list 3 4 25 50))
 
 ; A list of operators which are allowed in game
-(define op-list (list + - / *))
+(define op-list (list '+ '- '/ '*))
+
+; Append list of numbers and operators
+; This list contains all numbers and operators
+(define full-list (append n-list op-list))
+
+; Need to take two numbers from the lsit 
+;(length (permutations full-list))
+
+(define dup-free (remove-duplicates (permutations full-list)))
+
+(length dup-free)
+
+; Need to perform this function many times
+; As list also starts and ends with the same elements
+(define (make-rpn l)
+  (append (list 1 2) l (list '+)))
+
+; Mix lists together
+(map make-rpn dup-free)
