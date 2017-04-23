@@ -42,6 +42,6 @@ racket countdown.rkt
 **Software Version Control:** Git 2.7.4 <br />
 **Hosting Site:** GitHub <br />
 **Programming Language:** Racket <br />
-**Project Management** Zube.io
-**Testing** Travis CI
-**Documentation:** GitHub Wiki
+**Project Management** Zube.io <br />
+**Testing** Travis CI <br />
+**Documentation:** GitHub Wiki <br />
