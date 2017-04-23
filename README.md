@@ -43,7 +43,7 @@ The repository has the Mozilla Public License 2.0. What this licences says about
 * Original copyright must be included
 * Can be used commercially, modified, distributed and sublicensed
 
-### What is the gitignore file and where did it come from 
+### What is the gitignore file and where did it come from?
 
 * Contains code to remove  DrRacket autosave files
 * Found at the GitHub gitignore repository - https://github.com/racket/racket/blob/master/.gitignore
