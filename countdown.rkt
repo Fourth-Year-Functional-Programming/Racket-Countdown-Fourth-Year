@@ -1,9 +1,11 @@
 #lang racket
 
 #|
-    This file contains the final version of the countdown numbers game.
+    This file contains the final version of the countdown numbers game. It does not compute the result but
+    comments are left below to outline the steps that are needed to make the program work fully.
 |#
 
+; Welcome message
 (displayln "***** Welcome to the Countdown numbers round *****")
 (displayln "")
 
@@ -34,7 +36,8 @@
 
 ; An empty list to represent the stack that will be used
 ; for converting permutations into valid Reverse Polish Notation
-(define stack (list))
+;(define stack (list))
+(define stack 1)
 
 ; Mock list to repesent what the final list should look like
 (define mock-list (list 1 2 3 4 '+ '/ '-))
@@ -51,79 +54,41 @@
 ; Mix lists together
 ; However the first two elements and the last element is never changed
 ; This means that not all permutations are in this list
-(define perm-list (map make-rpn dup-free))
-
-; This is a function to determine which permutations of the perm-list are
-; in the correct order to be valid Reverse Polish Notation
-#|(define (valid-rpn? l [stack 0]) ; e is duplicate free list, s is the stack
-
-
-   ; This won't work in final version
-   ; It's only true is values are the exact same
-   ; Here it's mock testing if both elements are numbers
-   ; In final version the test is to check if both elements are numbers E.G 12 and 34
-   ; The other scenario is that one or both elements are operators
-   (if(null? l)
-      (if (= stack 1) #t #f) ; If list is null Check if element is a number
-          (if(= (car l) 1) ; if top element of dup free list is equal to 1 (A Number)
-
-        
-         (valid-rpn? (cdr l)(+ 1 stack)) #f ; cdr returns the list with the previuos top element 
-
-         ;fill this part in
-         )))
-|#                                                                 
-;( if (null? l)  (if (= stack 1) #t #f)  (if (= (car l) 1)  (valid-rpn? (cdr l)(+ 1 stack)) #f ) )
-; ===========================================================================
-
-; Append list of numbers and operators
-; This list contains all numbers and operators
-;(define full-list (append n-list op-list))
-
-; Need to take two numbers from the lsit 
-;(length (permutations full-list))
-
-;(define dup-free (remove-duplicates (permutations full-list)))
-
-;(length dup-free)
-
 ; Could make this function recursive and run it with the different values
 ; E.G (list 1 2) l (list '-)
 ;     (list 1 2) l (list '/)
 ;     (list 2 1) l (list '-)
-;     (list 2 1) l (list '/)
-;
-; Then remove duplicates (Will be slow program though)
+(define perm-list (map make-rpn dup-free))
 
-; Need to perform this function many times
-; As list also starts and ends with the same elements
-#;(define (make-rpn l)
-  (append (list 1 2) l (list '+)))
+; ====================  Steps to check permutation for valid Reverse Polish Notation  ====================
 
-; Mix lists together
-; 40320 permutations
-;(map make-rpn dup-free)
+; 1: Pass in the list of permutations and an empty list to be the stack
+; 2: Check that the list is not empty - This means there are still permutations to check
+; 3: Check the elements in the permutation - If it's a number put number on to the stack
+;    - If it's an operator take the top two numbers from stack and evaluate them with the
+;      operator
+; 4: Put the new value back into the top of the stack (LIFO last in first out)
+; 5: Repeat these steps throughout the permutation and take the final number and compare it
+;    to the target number
+; If it turns out that the permutation can not be evaluated as it's not it the correct order
+; then throw out that permutation and move on to the next one
 
-; **********  NEXT TO DO  **********
+; ========================================================================================================
 
-; Need to define stack here
+; This is a function to determine which permutations of the perm-list are
+; in the correct order to be valid Reverse Polish Notation
+(define (valid-rpn? l [stack 0]) ; e is duplicate free list, s is the stack
 
-; Need to make function to check and evalute the permutations
-; and see which ones are valid
+   ; Check if the list is empty 
+   (if(null? l)
+      (if(positive? stack) #t #f) ; If list is empty check if the top element on the stack is a number 
+          (if (positive? (car l)) ; If list is not empty check if the top element in the list is a number 
 
-; ==========  UNUSED FUNCTIONS  ==========
+         (valid-rpn? (cdr l)(+ 1 stack)) #f ; If element in list is a number recursively call valid-rpn? and pass in list minus top element
+                                            ; and add the top element onto the stack
 
-;(define random-n-list (shuffle n-list))
+         )))
+                                                               
 
-;(random-n-list)
 
-; A list of operators which are allowed in game
-;(define op-list (list '+ '- '/ '*))
 
-;(shuffle op-list)
-
-; Remove 4 elements from the list
-; 
-;(define random-n-list (remove 100 (list n-list)))
-
-;(remove 100 (list n-list))

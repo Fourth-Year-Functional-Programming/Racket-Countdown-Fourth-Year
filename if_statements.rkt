@@ -28,16 +28,16 @@
 
 (define stack (list ))
 
-(define l (list 1)
+(define l (list 1))
 
 ; if null?    #True                              # false Check
 ;(if(null? l)  (if (positive? (car stack)) #t #f) #f)
 
-                                        ; null stack?
-( if (null? l)  (error "list is empty") (if (positive? (car l)) #t #f))
+                ; work on stack        ; null stack?
+( if (null? l) (if (positive? (car stack)) #t #f) (if (positive? (car l)) #t #f))
 
     ; expecting number not empty list
-    ;(if (positive? (car stack)) #t #f))
+    ;
 
 
- ;(if (null? stack) ;if true place number on stack #f)
+ ;(if (null? stack) ;if true place number on stack #f) (if (= stack 1) #t #f)
