@@ -34,6 +34,12 @@ It is best to run this in the editor DrRacket. You can run it from the command l
 ```
 racket countdown.rkt
 ```
+### What licence does the repository have?
+
+The repository has the Mozilla Public License 2.0. What this licences says about the code in this repository
+
+* Can be freely used once the source code for changes are made available under the Mozilla Public Licence 
+
 
 # Technologies used
 
