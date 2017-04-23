@@ -7,24 +7,14 @@
 ; A hard coded list to represent a round from the countdown number game
 (define n-list (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
 
-; Empty list to store random elments from n-list
-(define ran-list (list))
 
-; Code obtained from http://stackoverflow.com/questions/4174839/random-function-in-scheme
-; Retrives one random element
-;(define (random-element list ran-list)
 
-  ; list-ref is returning number, append is lookking for list
- ;(append ran-list (list-ref list (random (length list)))))
 
-(define (random-element list ran-list)
-  ; Build list gets the number first
-  ; now a procdure
- (build-list (list-ref list (random (length list)))) ;here)
+
 
 ;(define random-n-list (shuffle n-list))
 
-;(random-n-list)
+
 
 ; A list of operators which are allowed in game
 ;(define op-list (list '+ '- '/ '*))
