@@ -52,3 +52,32 @@ racket countdown.rkt
 
 A full wiki containing relevant information can be found at this link https://github.com/Fourth-Year-Functional-Programming/Racket-Countdown-Fourth-Year/wiki. It is __strongly__ suggested that you go here to read about the development of the project and all it's **_extras_**. This is where the project is dicussed in detail.
 
+### Random Target Number
+
+The program generates a differnent target number on each run.
+
+```Racket
+(define target (random 101 999))
+```
+
+### Permutations
+
+Program creates a list of permutations that start and end in a manner which allows the permutation to be in the form of valid Reverse Polish Notation.
+
+```Racket
+; Get permutations of the list and remove duplicates then store in new list called dup-free
+(define dup-free (remove-duplicates (permutations mock-list)))
+```
+
+```Racket
+; Function to append numbers to start of above permutations and an operator to the end
+(define (make-rpn l)
+  (append (list 5 6) l (list '*)))
+```
+
+```Racket
+; Use map function to create lists of permutations that can be valid Reverse Polish Notation 
+; and store in new list called perm-list
+(define perm-list (map make-rpn dup-free))
+```
+

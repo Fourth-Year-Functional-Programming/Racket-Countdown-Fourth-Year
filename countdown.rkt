@@ -9,10 +9,18 @@
 (displayln "***** Welcome to the Countdown numbers round *****")
 (displayln "")
 
+; Display message for number set
+(display "Full set of numbers")
+(displayln "")
+
 ; A hard coded list to represent the numbers which can appear
 ; during the numbers round from countdown
 ; List contains 24 numbers
 (define n-list (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
+
+; Display list to screen
+n-list
+(displayln "")
 
 ; A hard coded list of operators which are allowed to be
 ; used in numbers round
@@ -41,6 +49,10 @@
 
 ; Mock list to repesent what the final list should look like
 (define mock-list (list 1 2 3 4 '+ '/ '-))
+(displayln "")
+(displayln "")
+(display "Starting list: ")
+mock-list
 
 ; dup-free contains 5040 permutations
 (define dup-free (remove-duplicates (permutations mock-list)))
@@ -51,6 +63,9 @@
 (define (make-rpn l)
   (append (list 5 6) l (list '*)))
 
+(displayln "")
+(display "Appending numbers and operator for valid RPN")
+
 ; Mix lists together
 ; However the first two elements and the last element is never changed
 ; This means that not all permutations are in this list
@@ -59,6 +74,13 @@
 ;     (list 1 2) l (list '/)
 ;     (list 2 1) l (list '-)
 (define perm-list (map make-rpn dup-free))
+
+(displayln "")
+perm-list
+
+(displayln "")
+(display (length perm-list))
+(display  " permutations for this list")
 
 ; ====================  Steps to check permutation for valid Reverse Polish Notation  ====================
 
