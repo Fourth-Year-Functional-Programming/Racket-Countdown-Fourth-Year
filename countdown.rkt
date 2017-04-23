@@ -5,21 +5,57 @@
 |#
 
 ; A hard coded list to represent a round from the countdown number game
-(define n-list (list 3 4 25 50))
+(define n-list (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
+
+; Empty list to store random elments from n-list
+(define ran-list (list))
+
+; Code obtained from http://stackoverflow.com/questions/4174839/random-function-in-scheme
+; Retrives one random element
+;(define (random-element list ran-list)
+
+  ; list-ref is returning number, append is lookking for list
+ ;(append ran-list (list-ref list (random (length list)))))
+
+
+
+
+
+    
+(define (random-element list ran-list)
+ (build-list ran-list (list-ref list (random (length list)))))
+
+
+
+
+
+;(define random-n-list (shuffle n-list))
+
+;(random-n-list)
 
 ; A list of operators which are allowed in game
-(define op-list (list '+ '- '/ '*))
+;(define op-list (list '+ '- '/ '*))
+
+;(shuffle op-list)
+
+; Remove 4 elements from the list
+; 
+;(define random-n-list (remove 100 (list n-list)))
+
+;(remove 100 (list n-list))
+
+; ===========================================================================
 
 ; Append list of numbers and operators
 ; This list contains all numbers and operators
-(define full-list (append n-list op-list))
+;(define full-list (append n-list op-list))
 
 ; Need to take two numbers from the lsit 
 ;(length (permutations full-list))
 
-(define dup-free (remove-duplicates (permutations full-list)))
+;(define dup-free (remove-duplicates (permutations full-list)))
 
-(length dup-free)
+;(length dup-free)
 
 ; Could make this function recursive and run it with the different values
 ; E.G (list 1 2) l (list '-)
@@ -31,12 +67,12 @@
 
 ; Need to perform this function many times
 ; As list also starts and ends with the same elements
-(define (make-rpn l)
+#;(define (make-rpn l)
   (append (list 1 2) l (list '+)))
 
 ; Mix lists together
 ; 40320 permutations
-(map make-rpn dup-free)
+;(map make-rpn dup-free)
 
 ; **********  NEXT TO DO  **********
 
