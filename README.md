@@ -35,4 +35,13 @@ It is best to run this in the editor DrRacket. You can run it from the command l
 racket countdown.rkt
 ```
 
+# Technologies used
 
+**Operating System:** Linux Mint 18.1 “Serena” <br />
+**IDE:** DrRacket 6.7 <br />
+**Software Version Control:** Git 2.7.4 <br />
+**Hosting Site:** GitHub <br />
+**Programming Language:** Racket <br />
+**Project Management** Zube.io
+**Testing** Travis CI
+**Documentation:** GitHub Wiki
