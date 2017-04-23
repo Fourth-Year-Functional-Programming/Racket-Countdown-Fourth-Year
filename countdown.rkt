@@ -36,8 +36,7 @@
 
 ; An empty list to represent the stack that will be used
 ; for converting permutations into valid Reverse Polish Notation
-;(define stack (list))
-(define stack 1)
+(define stack (list))
 
 ; Mock list to repesent what the final list should look like
 (define mock-list (list 1 2 3 4 '+ '/ '-))
