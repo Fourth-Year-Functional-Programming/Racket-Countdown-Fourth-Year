@@ -4,6 +4,9 @@
     This file contains the final version of the countdown numbers game.
 |#
 
+(displayln "***** Welcome to the Countdown numbers round *****")
+(displayln "")
+
 ; A hard coded list to represent the numbers which can appear
 ; during the numbers round from countdown
 ; List contains 24 numbers
@@ -12,6 +15,13 @@
 ; A hard coded list of operators which are allowed to be
 ; used in numbers round
 (define op-list (list '+ '- '/ '*))
+
+; A hard coded target number
+(define target (random 101 999))
+
+; Display target number to screen
+(display "Target number is: ")
+(display target)
 
 ; Append list of numbers and operators
 ; This list contains all numbers and operators
@@ -41,8 +51,29 @@
 ; Mix lists together
 ; However the first two elements and the last element is never changed
 ; This means that not all permutations are in this list
-(map make-rpn dup-free)
+(define perm-list (map make-rpn dup-free))
 
+; This is a function to determine which permutations of the perm-list are
+; in the correct order to be valid Reverse Polish Notation
+#|(define (valid-rpn? l [stack 0]) ; e is duplicate free list, s is the stack
+
+
+   ; This won't work in final version
+   ; It's only true is values are the exact same
+   ; Here it's mock testing if both elements are numbers
+   ; In final version the test is to check if both elements are numbers E.G 12 and 34
+   ; The other scenario is that one or both elements are operators
+   (if(null? l)
+      (if (= stack 1) #t #f) ; If list is null Check if element is a number
+          (if(= (car l) 1) ; if top element of dup free list is equal to 1 (A Number)
+
+        
+         (valid-rpn? (cdr l)(+ 1 stack)) #f ; cdr returns the list with the previuos top element 
+
+         ;fill this part in
+         )))
+|#                                                                 
+;( if (null? l)  (if (= stack 1) #t #f)  (if (= (car l) 1)  (valid-rpn? (cdr l)(+ 1 stack)) #f ) )
 ; ===========================================================================
 
 ; Append list of numbers and operators
