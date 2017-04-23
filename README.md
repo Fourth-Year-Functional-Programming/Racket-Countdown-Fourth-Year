@@ -34,6 +34,21 @@ It is best to run this in the editor DrRacket. You can run it from the command l
 ```
 racket countdown.rkt
 ```
+### What licence does the repository have?
+
+The repository has the Mozilla Public License 2.0. What this licences says about the code in this repository
+
+* Can be freely used once the source code for changes are made available under the Mozilla Public Licence 
+* Copies of the original or instructions on how to get the original must be distributed
+* Original copyright must be included
+* Can be used commercially, modified, distributed and sublicensed
+
+### What is the gitignore file and where did it come from?
+
+* Contains code to remove  DrRacket autosave files
+* Found at the GitHub gitignore repository - https://github.com/racket/racket/blob/master/.gitignore
+
+
 
 # Technologies used
 
