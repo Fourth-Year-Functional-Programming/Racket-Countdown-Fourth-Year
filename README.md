@@ -45,3 +45,9 @@ racket countdown.rkt
 **Project Management** Zube.io <br />
 **Testing** Travis CI <br />
 **Documentation:** GitHub Wiki <br />
+
+# Features 
+
+### Wiki
+
+A full wiki containing relevant information can be found at this link https://github.com/Fourth-Year-Functional-Programming/Racket-Countdown-Fourth-Year/wiki. It is __strongly__ suggested that you go here to read about the development of the project and all it's **_extras_** 
