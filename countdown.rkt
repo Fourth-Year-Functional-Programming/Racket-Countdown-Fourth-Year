@@ -5,15 +5,9 @@
     comments are left below to outline the steps that are needed to make the program work fully.
 |#
 
-<<<<<<< HEAD
-; A hard coded list to represent a round from the countdown number game
-(define n-list (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
-
-=======
 ; Welcome message
 (displayln "***** Welcome to the Countdown numbers round *****")
 (displayln "")
->>>>>>> cm-countdown-17.04.22
 
 ; A hard coded list to represent the numbers which can appear
 ; during the numbers round from countdown
@@ -36,13 +30,10 @@
 ; ** Not final list: contains too many elements  **
 (define full-list (append n-list op-list))
 
-<<<<<<< HEAD
 
-=======
 ; An empty list which is used to store the random elements
 ; taken from n-list
 (define random-list (list))
->>>>>>> cm-countdown-17.04.22
 
 ; An empty list to represent the stack that will be used
 ; for converting permutations into valid Reverse Polish Notation
@@ -97,6 +88,10 @@
                                             ; and add the top element onto the stack
 
          )))
+
+(displayln "")
+(displayln "")
+(displayln "Program doesn't calculate result but the steps on how to do it are commented in the script")
                                                                
 
 
