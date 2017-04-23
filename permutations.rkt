@@ -18,7 +18,7 @@
 ; Find all the permutations of a list with 6 numbers
 ; There are no duplicates
 ; There will be 720 permutations
-; This is calculted as follows
+; This is calculated as follows
 ; 6! / (6 – 6)!
 ; 720 / 1 = 720
 ;(permutations p-list)

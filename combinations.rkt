@@ -11,7 +11,7 @@
 ;  A 6 number list to represent the numbers you could find on countdown
 (define c-list (list 1 2 3 4 25 50))
 
-; Find all the combinations with 2 numbers
+; Find all the combinations with 1 number
 ; There will be 15 combinations
 ; This is calculted as follows
 ; 6! / 1!(6 – 1)!
@@ -46,7 +46,7 @@
 ; 720 / 120 = 6
 ;(combinations c-list 5)
 
-; Find all the combinations with 5 numbers
+; Find all the combinations with 6 numbers
 ; There will be 20 combinations
 ; This is calculted as follows
 ; 6! / 5!(6 – 6)!
