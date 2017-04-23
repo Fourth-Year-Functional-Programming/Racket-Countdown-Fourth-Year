@@ -4,45 +4,44 @@
     This file contains the final version of the countdown numbers game.
 |#
 
-; A hard coded list to represent a round from the countdown number game
+; A hard coded list to represent the numbers which can appear
+; during the numbers round from countdown
+; List contains 24 numbers
 (define n-list (list 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 25 50 75 100))
 
-; Empty list to store random elments from n-list
-(define ran-list (list))
+; A hard coded list of operators which are allowed to be
+; used in numbers round
+(define op-list (list '+ '- '/ '*))
 
-; Code obtained from http://stackoverflow.com/questions/4174839/random-function-in-scheme
-; Retrives one random element
-;(define (random-element list ran-list)
+; Append list of numbers and operators
+; This list contains all numbers and operators
+; ** Not final list: contains too many elements  **
+(define full-list (append n-list op-list))
 
-  ; list-ref is returning number, append is lookking for list
- ;(append ran-list (list-ref list (random (length list)))))
+; An empty list which is used to store the random elements
+; taken from n-list
+(define random-list (list))
 
+; An empty list to represent the stack that will be used
+; for converting permutations into valid Reverse Polish Notation
+(define stack (list))
 
+; Mock list to repesent what the final list should look like
+(define mock-list (list 1 2 3 4 '+ '/ '-))
 
+; dup-free contains 5040 permutations
+(define dup-free (remove-duplicates (permutations mock-list)))
 
+; The list created here is it a form which can produce
+; permutations which contain valid Reverse Polish Notation
+; ** Need to perform this function many times as every permutation of this list will start and end with the same elements  **
+(define (make-rpn l)
+  (append (list 5 6) l (list '*)))
 
-    
-(define (random-element list ran-list)
- (build-list ran-list (list-ref list (random (length list)))))
-
-
-
-
-
-;(define random-n-list (shuffle n-list))
-
-;(random-n-list)
-
-; A list of operators which are allowed in game
-;(define op-list (list '+ '- '/ '*))
-
-;(shuffle op-list)
-
-; Remove 4 elements from the list
-; 
-;(define random-n-list (remove 100 (list n-list)))
-
-;(remove 100 (list n-list))
+; Mix lists together
+; However the first two elements and the last element is never changed
+; This means that not all permutations are in this list
+(map make-rpn dup-free)
 
 ; ===========================================================================
 
@@ -80,3 +79,20 @@
 
 ; Need to make function to check and evalute the permutations
 ; and see which ones are valid
+
+; ==========  UNUSED FUNCTIONS  ==========
+
+;(define random-n-list (shuffle n-list))
+
+;(random-n-list)
+
+; A list of operators which are allowed in game
+;(define op-list (list '+ '- '/ '*))
+
+;(shuffle op-list)
+
+; Remove 4 elements from the list
+; 
+;(define random-n-list (remove 100 (list n-list)))
+
+;(remove 100 (list n-list))
