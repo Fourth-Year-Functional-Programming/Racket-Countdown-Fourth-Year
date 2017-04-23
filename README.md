@@ -17,7 +17,7 @@ This application is a version of the TV show Countdown's number round. It replic
 
 This application is built using Racket and will run on any machine or OS once it has Racket installed. 
 
-### What Libraries does the application use?
+### What libraries does the application use?
 
 The application uses the standard Racket package and no imports are needed.
 
