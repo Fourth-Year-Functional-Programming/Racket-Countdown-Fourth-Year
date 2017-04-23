@@ -50,4 +50,5 @@ racket countdown.rkt
 
 ### Wiki
 
-A full wiki containing relevant information can be found at this link https://github.com/Fourth-Year-Functional-Programming/Racket-Countdown-Fourth-Year/wiki. It is __strongly__ suggested that you go here to read about the development of the project and all it's **_extras_** 
+A full wiki containing relevant information can be found at this link https://github.com/Fourth-Year-Functional-Programming/Racket-Countdown-Fourth-Year/wiki. It is __strongly__ suggested that you go here to read about the development of the project and all it's **_extras_**. This is where the project is dicussed in detail.
+
