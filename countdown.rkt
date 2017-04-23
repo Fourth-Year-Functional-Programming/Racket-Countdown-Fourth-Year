@@ -17,17 +17,10 @@
   ; list-ref is returning number, append is lookking for list
  ;(append ran-list (list-ref list (random (length list)))))
 
-
-
-
-
-    
 (define (random-element list ran-list)
- (build-list ran-list (list-ref list (random (length list)))))
-
-
-
-
+  ; Build list gets the number first
+  ; now a procdure
+ (build-list (list-ref list (random (length list)))) ;here)
 
 ;(define random-n-list (shuffle n-list))
 
